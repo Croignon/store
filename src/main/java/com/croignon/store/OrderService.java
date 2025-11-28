@@ -1,9 +1,11 @@
 package com.croignon.store;
 
+import org.springframework.stereotype.Service;
 
+@Service
 public class OrderService {
-    
-    private final PaymentService paymentService;
+
+    private PaymentService paymentService;
 
     public OrderService(PaymentService paymentService) {
         this.paymentService = paymentService;
@@ -12,4 +14,5 @@ public class OrderService {
     public void placeOrder() {
         paymentService.processPayment(10);
     }
+
 }
